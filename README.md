@@ -146,8 +146,35 @@ With optimized hyperparameters, it enhances the flexibility of the model to capt
 
 The above figure is a confusion matrix provides a visual representation of the model's performance, showing the number of true positives, true negatives, false positives, and false negatives. We can clearly see that the dark proportion of the entire data is approx 75%, which do shows an improvment in permofance of the model.
 
+### Fairness Analysis
 
+To perform a fairness analysis of the final model, I assume two groups are:
 
+    Group A: Blue team (side = 'Blue')
 
+    Group B: Red team (side = 'Red')
 
+For the evaluation metric, I choose to use **Accuracy**, which measures the overall correct predictions of the model. As I explained previously, since my dataset and classes are balanced, where numbers of win and lose are approxmately the same, so Accuracy will works just fine.
+
+Then, let's perform the permutation test and state the null and alternative hypotheses:
+
+    Null Hypothesis: Our model is fair. It's accuracy for the Blue team and the Red team is roughly the same, and any differences are due to random chance.
+
+    Alternative Hypothesis: Our model is unfair. The accuracy for the Blue team is lower than the accuracy for the Red team.
+    
+For the choice of test statistic, We need one that can measure how different the model's performance between two groups (X and Y), so I choose **the difference in accuracy between the two groups** as the test statistic
+
+For significane level, I'll choose one of common used one, **5%**, as the the probability, under the null hypothesis, that the test statistic is equal to the value that was observed in the data or is even further in the direction of the alternative.
+
+After running our permutation test, I get
+
+`Observed Difference: -0.0019753550935941444
+p-value: 0.792
+Conclusion: Fail to reject the null hypothesis.`
+
+<iframe src="assets/figure-1.html" width=800 height=600 frameBorder=0></iframe>
+
+By looking at the graph and two lines(red represents observed stats and purple represents significance level of 5%, or by looking at the p_value = 0.792, thus we fail to reject that the null hypothesis that the accuracy for the Blue team and the Red team is roughly the same.
+
+This indicates that there is no significant difference in accuracy between the Blue team (Group X) and the Red team (Group Y). Based on this analysis, we do not have sufficient evidence to conclude that the model is unfair in terms of its accuracy performance for the two groups.
 
