@@ -140,7 +140,7 @@ The final model's accuracy of approximately 73.90% is a bit higher than the accu
     With incorporating more relevant features, the model can capture more nuanced patterns in the data.
 
     With optimized hyperparameters, it enhances the flexibility of the model to capture complex relationship.
-    
+
 <iframe src="assets/Figure-1.png" width=800 height=600 frameBorder=0></iframe>
 
 The above figure is a confusion matrix provides a visual representation of the model's performance, showing the number of true positives, true negatives, false positives, and false negatives. We can clearly see that the dark proportion of the entire data is approx 75%, which do shows an improvment in permofance of the model.
