@@ -66,7 +66,11 @@ By running code below we can clearly see that The number of win and that of lose
 |      10633 |
 |      10629 |
 
+Accuracy is straightforward to understand and interpret, and it will work well for my prediction model since there is an approximately equal number of instances for each class(Win/Lose) as when there is a team winning a game, there will always be another loser in this game. So there will always be equal number of instances for each class if the data is collected completely. Even with potential missingless of data collection, the number of these two classes will still be close. So the classes in the dataset are balanced, then accuracy can be a suitable metric to evaluate my model's performance.
 
+Meanwhile, the columns, which mostly the features I plan to use for the model to predict, are all of them can be collected **before the mid-game teamfight**, which means these informations can be known at the "time of prediction". And thats why I clarify the specific time period in my prediction question, since without that, people may consider to use other data, such as final teamkills, gold difference at the end of the game, to predict the result. However, that might make our preidction question and model a bit of useless since we wanna predict things that havent happened with light clues, using final teamkills and other data that are recorded after the game has been finished to predict the result will make such progress meaningless. So like among the features I choose, 'side', 'firstblood', 'firstdragon', 'firsttower','golddiffat10/15' they all can be recorded/collected/noticed during the game/before the final result released, which do leave us space to guess/predict.
+
+### Baseline Model
 
 
 
