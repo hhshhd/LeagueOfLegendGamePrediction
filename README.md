@@ -1,7 +1,7 @@
 # Prediction behind LOL
 **Name**: Housheng Hai
 
-A project designed to build and train a model for predicting LOL games result. DSC80 at UCSD. Our exploratory data analysis on this dataset can be found here.
+A project designed to build and train a model for predicting LOL games result. DSC80 at UCSD. Our exploratory data analysis on this dataset can be found [here](https://hhshhd.github.io/LeagueOfLegendsSylasWinRateAnalysis/).
 
 ### Framing the Problem
 #### Problem Identification
