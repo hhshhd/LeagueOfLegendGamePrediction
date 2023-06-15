@@ -172,7 +172,7 @@ After running our permutation test, I get
 `p-value: 0.792`
 `Conclusion: Fail to reject the null hypothesis.`
 
-<iframe src="assets/figure-1.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/figure-2.html" width=800 height=600 frameBorder=0></iframe>
 
 By looking at the graph and two lines(red represents observed stats and purple represents significance level of 5%, or by looking at the p_value = 0.792, thus we fail to reject that the null hypothesis that the accuracy for the Blue team and the Red team is roughly the same.
 
