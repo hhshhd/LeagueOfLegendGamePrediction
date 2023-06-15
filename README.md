@@ -1,7 +1,7 @@
 # Prediction behind LOL
 **Name**: Housheng Hai
 
-A project designed to build and train a model for predicting LOL games result. DSC80 at UCSD.
+A project designed to build and train a model for predicting LOL games result. DSC80 at UCSD. Our exploratory data analysis on this dataset can be found here.
 
 ### Framing the Problem
 #### Problem Identification
@@ -127,16 +127,16 @@ Hyperparameters are tuned using **GridSearchCV** with 5-fold cross-validation. T
 
 The best hyperparameters obtained from the grid search are:
 
-    n_estimators: 200
+    n_estimators: 100
 
     max_depth: 5
 
-    min_samples_split: 2
+    min_samples_split: 10
 
 
 To select the hyperparameters for the final model, we used the method of grid search combined with cross-validation. First, I define a grid of hyperparameters('n_estimators': [50, 100, 200],'max_depth': [None, 5, 10],'min_samples_split': [2, 5, 10]) for RandomForestClassifier. Then I use the GridSearchCV class, which performs searches over the specified hyperparameter grid while utilizing cross-validation, fitting the grid search object to the training data, which triggers the exploration of different combinations of hyperparameters and evaluation of model performance using cross-validation. After the grid search is completed, the best model and the best hyperparameters are available through best_model and best_params_.
 
-The final model's accuracy of approximately 73.90% is a bit higher than the accuracy of the baseline model (71.67%), which shows an improvement in performance compared to the baseline model. This improvement in accuracy suggests that the final model is better at correctly classifying the outcomes of the games. It indicates that the **additional features** engineered and the **optimized hyperparameters** helped enhance the model's predictive ability.
+The final model's accuracy of approximately 73.99% is a bit higher than the accuracy of the baseline model (71.67%), which shows an improvement in performance compared to the baseline model. This improvement in accuracy suggests that the final model is better at correctly classifying the outcomes of the games. It indicates that the **additional features** engineered and the **optimized hyperparameters** helped enhance the model's predictive ability.
 
 With incorporating more relevant features, the model can capture more nuanced patterns in the data.
 
@@ -168,13 +168,13 @@ For significane level, I'll choose one of common used one, **5%**, as the the pr
 
 After running our permutation test, I get
 
-`Observed Difference: -0.0019753550935941444`
-`p-value: 0.792`
+`Observed Difference: -0.0015050324522621894`
+`p-value: 0.847`
 `Conclusion: Fail to reject the null hypothesis.`
 
 <iframe src="assets/figure-2.html" width=800 height=600 frameBorder=0></iframe>
 
-By looking at the graph and two lines(red represents observed stats and purple represents significance level of 5%, or by looking at the p_value = 0.792, thus we fail to reject that the null hypothesis that the accuracy for the Blue team and the Red team is roughly the same.
+By looking at the graph and two lines(red represents observed stats and purple represents significance level of 5%, or by looking at the p_value = 0.847, thus we fail to reject that the null hypothesis that the accuracy for the Blue team and the Red team is roughly the same.
 
 This indicates that there is no significant difference in accuracy between the Blue team (Group X) and the Red team (Group Y). Based on this analysis, we do not have sufficient evidence to conclude that the model is unfair in terms of its accuracy performance for the two groups.
 
