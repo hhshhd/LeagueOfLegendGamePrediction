@@ -63,6 +63,7 @@ Accuracy = (Number of Correct Predictions) / (Total Number of Predictions)
 By running code below we can clearly see that The number of win and that of lose are approxmately same.
 
 `lol2022_team_filtered.groupby('result')['position'].count()`
+
 |   position |
 |-----------:|
 |      10633 |
