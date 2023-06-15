@@ -22,6 +22,8 @@ I will choose ['gameid', 'position', 'result', 'side', 'firstblood', 'firstdrago
 | 'golddiffat10' | Average gold difference at 10 minutes |
 | 'golddiffat15' | Average gold difference at 15 minutes |
 
+Then the dataframe with selected columns would be shown below,
+
 | gameid                | position   |   result | side   |   firstblood |   firstdragon |   firsttower |   golddiffat10 |   golddiffat15 |
 |:----------------------|:-----------|---------:|:-------|-------------:|--------------:|-------------:|---------------:|---------------:|
 | ESPORTSTMNT01_2690210 | top        |        0 | Blue   |            0 |           nan |          nan |             52 |            391 |
