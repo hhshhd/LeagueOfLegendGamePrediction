@@ -87,16 +87,17 @@ Model Description:
             'firstblood' (nominal, 2 categories: 0, 1)
             'firstdragon' (nominal, 2 categories: 0, 1)
             'firsttower' (nominal, 2 categories: 0, 1)
+            
 Encoding of Categorical Features:
 
-    One-Hot Encoding was used to encode the categorical features ('side', 'firstblood', 'firstdragon', 'firsttower'). This encoding technique creates binary columns for each category, indicating the presence or absence of that category.
+One-Hot Encoding was used to encode the categorical features ('side', 'firstblood', 'firstdragon', 'firsttower'). This encoding technique creates binary columns for each category, indicating the presence or absence of that category.
 
 
 Also, to ensure the model’s ability to generalize to unseen data, I apply train_test_split to split 20% of data randomly as the test set and remained as training set. Thus we can test the accuracy/performance of the model on unseen data by using the test set of data.
 
 Performance of the Model:
 
-    I use Accuracy to evaluate the performance of the model (the reason of choosing Accuracy has been explained in previous section), which measures the proportion of correctly classified instances out of the total predictions. The Accuracy I got is 0.7166705854690807, approxmately 71.67%. With such accuracy, I believe the performance of this model is just ok as a baseline model. Since this model is able to classify the outcomes of the games with a certain level of accuracy, but 71% is not much perfect since guessing the outcome randomly without any model/infos provided will have approx 50% accuracy. This model only raised 50% of accuracy, which is not enough. My desired perfomance should at least reach 75%, which is close but still there's still a distance. This baseline model is a starting point and may not capture all complexities of the problem.
+I use Accuracy to evaluate the performance of the model (the reason of choosing Accuracy has been explained in previous section), which measures the proportion of correctly classified instances out of the total predictions. The Accuracy I got is 0.7166705854690807, approxmately 71.67%. With such accuracy, I believe the performance of this model is just ok as a baseline model. Since this model is able to classify the outcomes of the games with a certain level of accuracy, but 71% is not much perfect since guessing the outcome randomly without any model/infos provided will have approx 50% accuracy. This model only raised 50% of accuracy, which is not enough. My desired perfomance should at least reach 75%, which is close but still there's still a distance. This baseline model is a starting point and may not capture all complexities of the problem.
     
 ### Final Model
 
@@ -108,9 +109,9 @@ The final model is trained on the whole dataset using the best hyperparameters o
 
 In the final model, I add **two** new features: 'golddiffat10' (standard scaled) and 'golddiffat15' (standard scaled). These features were chosen based on their potential relevance to the the outcome variable.
 
-    'golddiffat10': This feature represents the difference in gold between the two teams at the 10-minute mark. It captures the early game advantage or disadvantage of a team. By standard scaling this feature, we bring it to a common scale, which can help in achieving better model performance.
+'golddiffat10': This feature represents the difference in gold between the two teams at the 10-minute mark. It captures the early game advantage or disadvantage of a team. By standard scaling this feature, we bring it to a common scale, which can help in achieving better model performance.
 
-    'golddiffat15': Similar to 'golddiffat10', this feature represents the difference in gold between the two teams, but at the 15-minute mark. It provides additional information about the relative strength or weakness of the teams, and especially shows the trend whether the team is expanding their strength in last 5 minutes or waste their leading outcomes. I also apply standard scaling on this feature hope that may achieve better model performance as golddiffat10 does.
+'golddiffat15': Similar to 'golddiffat10', this feature represents the difference in gold between the two teams, but at the 15-minute mark. It provides additional information about the relative strength or weakness of the teams, and especially shows the trend whether the team is expanding their strength in last 5 minutes or waste their leading outcomes. I also apply standard scaling on this feature hope that may achieve better model performance as golddiffat10 does.
 
 These features are strong relevant because the gold difference at specific time intervals(espcially the beginning of the game) can be indicative of a team's performance and the likelihood of winning a game. The logic behind is that  having more golds at the beginning will have better equipment earlier, so it will be easier to gain an advantage in numerical values when fighting with the enemy, thereby expanding the acquisition of more resources, so as to win.  The information captured by these features reflects the dynamics and progress of the game, making them potentially informative for predicting the outcome.
 
@@ -137,9 +138,9 @@ To select the hyperparameters for the final model, we used the method of grid se
 
 The final model's accuracy of approximately 73.90% is a bit higher than the accuracy of the baseline model (71.67%), which shows an improvement in performance compared to the baseline model. This improvement in accuracy suggests that the final model is better at correctly classifying the outcomes of the games. It indicates that the **additional features** engineered and the **optimized hyperparameters** helped enhance the model's predictive ability.
 
-    With incorporating more relevant features, the model can capture more nuanced patterns in the data.
+With incorporating more relevant features, the model can capture more nuanced patterns in the data.
 
-    With optimized hyperparameters, it enhances the flexibility of the model to capture complex relationship.
+With optimized hyperparameters, it enhances the flexibility of the model to capture complex relationship.
 
 <iframe src="assets/Figure-1.png" width=800 height=600 frameBorder=0></iframe>
 
