@@ -13,7 +13,6 @@ I will choose ['gameid', 'position', 'result', 'side', 'firstblood', 'firstdrago
 | Column_Name | Description |
 | ----------- | ----------- |
 | 'gameid | the id of each game/match. Each 'gameid' corresponds to up to 12 rows – one for each of the 5 players on both teams and 2 containing summary data for the two teams. |
-| Paragraph | Text |
 | 'position' | the role of the player in each match (top,jng, mid, bot, sup) |
 | 'result' | WIN/LOSE (1 represents win in raw data) |
 | 'side' | side of the team in the game, (Blue/Red) |
