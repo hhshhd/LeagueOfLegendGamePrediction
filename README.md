@@ -169,7 +169,9 @@ For significane level, I'll choose one of common used one, **5%**, as the the pr
 After running our permutation test, I get
 
 `Observed Difference: -0.0019753550935941444
+
 p-value: 0.792
+
 Conclusion: Fail to reject the null hypothesis.`
 
 <iframe src="assets/figure-1.html" width=800 height=600 frameBorder=0></iframe>
